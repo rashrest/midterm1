@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+</head>
+<body>
+<h1>Midterm Survey</h1>
+
+<form action="#" method="post">
+
+
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="{{ @userName }}"><br><br>
+
+    <!-- display an error message if there is one -->
+    <check if="{{ isset(@errors['name']) }}">
+        <span class="err" style="color: red">{{ @errors['name'] }}</span>
+    </check><br>
+
+    <p>Check all that apply: </p>
+
+    <repeat group="{{ @answers }}" value="{{ @answer }}">
+        <label><input type="checkbox"
+                      name="answer"
+                      id="{{ @answer }}"
+                      value="{{ @answer }}"
+            <check if="{{ @answer == @userAnswer }}">checked="checked"</check>
+            > {{ ucfirst(@answer) }}
+            </input>
+        </label><br>
+    </repeat><br>
+
+    <!-- display an error message for meal if there is one -->
+    <check if="{{ isset(@errors['answer']) }}">
+        <span class="err" style="color: red">{{ @errors['answer'] }}</span><br>
+    </check>
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
