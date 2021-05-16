@@ -1,0 +1,14 @@
+{
+  "name": "midterm quiz",
+  "authors": [
+    {
+      "name": "Raju Shrestha",
+      "email": "rshrestha9@mail.greenriver.edu"
+    }
+
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  },
+  "description": "default composer.json for midterm"
+}
